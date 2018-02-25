@@ -3,12 +3,12 @@ package org.gnomerous.ingr3.process.chain.handler;
 // INGR3
 import org.gnomerous.ingr3.model.Ingredient;
 
-public abstract class IngredientHandler {
+public abstract class AbstractIngredientHandler {
 
-    private IngredientHandler successor;
+    private AbstractIngredientHandler successor;
     private boolean hasSuccessor = false;
 
-    public void setSuccessor(IngredientHandler s) {
+    public void setSuccessor(AbstractIngredientHandler s) {
         hasSuccessor = true;
         this.successor = s;
     }
@@ -19,7 +19,7 @@ public abstract class IngredientHandler {
         return hasSuccessor;
     }
 
-    protected IngredientHandler getSuccessor() { 
+    protected AbstractIngredientHandler getSuccessor() { 
         return successor;
     }
 }

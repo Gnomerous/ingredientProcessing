@@ -6,13 +6,13 @@ import java.util.List;
 
 // INGR3
 import org.gnomerous.ingr3.model.Ingredient;
-import org.gnomerous.ingr3.process.chain.handler.IngredientHandler;
+import org.gnomerous.ingr3.process.chain.handler.AbstractIngredientHandler;
 
 public class ChainManager {
 
-    private List<IngredientHandler> chain = new ArrayList<>();
+    private List<AbstractIngredientHandler> chain = new ArrayList<>();
     
-    public void appendToChain(IngredientHandler ih) { 
+    public void appendToChain(AbstractIngredientHandler ih) { 
         this.chain.add(ih);
     }
 

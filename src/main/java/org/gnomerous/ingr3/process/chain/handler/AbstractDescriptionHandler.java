@@ -3,7 +3,7 @@ package org.gnomerous.ingr3.process.chain.handler;
 // INGR3
 import org.gnomerous.ingr3.model.Ingredient;
 
-public abstract class DescriptionHandler extends IngredientHandler {
+public abstract class AbstractDescriptionHandler extends AbstractIngredientHandler {
 
     @Override
     public void process(Ingredient ingredient) {
