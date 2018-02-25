@@ -1,5 +1,24 @@
 package org.gnomerous.ingr3.process.chain.handler;
 
-public class DescriptionHandler {
+// INGR3
+import org.gnomerous.ingr3.model.Ingredient;
 
+public abstract class DescriptionHandler extends IngredientHandler {
+
+    @Override
+    public void process(Ingredient ingredient) {
+
+        // Lookup the description
+        String description = lookupDescription(ingredient.getIngredientName());
+
+        // Validate the description
+        if (description == null) { 
+            //TODO:
+
+        } else { 
+            ingredient.setDescription(description);
+        }
+    }
+
+    protected abstract String lookupDescription(String name);
 }
