@@ -14,7 +14,7 @@ public class Ingredient {
     // CONSTANTS
 
     /** The default value for {@link #healthRanking}. */
-    private static final double DEFAULT_RANKING = -5.0;
+    public static final double DEFAULT_RANKING = -5.0;
 
 
 
