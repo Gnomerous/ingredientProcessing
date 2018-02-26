@@ -15,6 +15,7 @@ import org.jsoup.select.Elements;
 // INGR3
 import org.gnomerous.ingr3.model.Ingredient;
 
+
 // TODO: This class needs to be cleaned up at some point but should be good enough for initial testing
 public class QueryWikipediaForDescription extends AbstractDescriptionHandler {
 
