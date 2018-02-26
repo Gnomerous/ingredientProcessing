@@ -16,7 +16,7 @@ import org.jsoup.select.Elements;
 import org.gnomerous.ingr3.model.Ingredient;
 
 // TODO: This class needs to be cleaned up at some point but should be good enough for initial testing
-public class QueryWikapediaForDescription extends AbstractDescriptionHandler {
+public class QueryWikipediaForDescription extends AbstractDescriptionHandler {
 
     @Override
     protected String lookupDescription(Ingredient ingredient) {
