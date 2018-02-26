@@ -8,7 +8,7 @@ public abstract class AbstractHealthValueHandler extends AbstractIngredientHandl
     public void process(Ingredient ingredient) {
 
         // Lookup the healthValue
-        double healthValue = lookupHealthValue(ingredient.getIngredientName());
+        double healthValue = lookupHealthValue(ingredient);
 
         // Validate healthValue
         if (healthValue == Ingredient.DEFAULT_RANKING) { 
@@ -19,5 +19,5 @@ public abstract class AbstractHealthValueHandler extends AbstractIngredientHandl
         }
     }
 
-    protected abstract double lookupHealthValue(String name);
+    protected abstract double lookupHealthValue(Ingredient ingredient);
 }
