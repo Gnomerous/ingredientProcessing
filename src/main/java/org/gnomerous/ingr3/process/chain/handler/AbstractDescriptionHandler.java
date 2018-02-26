@@ -9,7 +9,7 @@ public abstract class AbstractDescriptionHandler extends AbstractIngredientHandl
     public void process(Ingredient ingredient) {
 
         // Lookup the description
-        String description = lookupDescription(ingredient.getIngredientName());
+        String description = lookupDescription(ingredient);
 
         // Validate the description
         if (description == null) { 
@@ -20,5 +20,5 @@ public abstract class AbstractDescriptionHandler extends AbstractIngredientHandl
         }
     }
 
-    protected abstract String lookupDescription(String name);
+    protected abstract String lookupDescription(Ingredient ingredient);
 }
