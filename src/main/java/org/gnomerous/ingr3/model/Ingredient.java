@@ -13,6 +13,9 @@ public class Ingredient {
 
     // CONSTANTS
 
+    /** The default value for {@link #ingredientDescription}. */
+    public static final String EMPTY_DESCRIPTION = "";
+
     /** The default value for {@link #healthRanking}. */
     public static final double DEFAULT_RANKING = -5.0;
 
@@ -29,7 +32,7 @@ public class Ingredient {
     // CONSTRUCTORS
 
     public Ingredient(final String name) { 
-        this(name, "", DEFAULT_RANKING);
+        this(name, EMPTY_DESCRIPTION, DEFAULT_RANKING);
     }
     
     Ingredient(final String name, final String description) {
