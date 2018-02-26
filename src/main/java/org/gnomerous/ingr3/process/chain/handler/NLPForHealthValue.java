@@ -21,9 +21,15 @@ public class NLPForHealthValue extends AbstractHealthValueHandler {
 
         // Try to get the sentiment value for the description
         try (LanguageServiceClient language = LanguageServiceClient.create()) {
-            Document doc = Document.newBuilder().setContent(ingredient.getIngredientDescription()).setType(Type.PLAIN_TEXT).build();
-            Sentiment sentiment = language.analyzeSentiment(doc).getDocumentSentiment();
-            return sentiment.getScore();
+
+            // Create a document that contains the description
+            Document doc = Document.newBuilder()
+                                        .setContent(ingredient.getIngredientDescription())
+                                        .setType(Type.PLAIN_TEXT)
+                                        .build();
+
+            // Return the sentiment value after doing some NLP analysis
+            return language.analyzeSentiment(doc).getDocumentSentiment().getScore();
 
         // Catch an IO Exception.
         } catch (IOException e) {
