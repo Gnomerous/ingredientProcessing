@@ -12,7 +12,7 @@ public abstract class AbstractDescriptionHandler extends AbstractIngredientHandl
         String description = lookupDescription(ingredient);
 
         // Validate the description
-        if (description == null || description == Ingredient.EMPTY_DESCRIPTION) { 
+        if (description == null || description == Ingredient.DEFAULT_NUTRITION_DESCRIPTION) { 
             //TODO: Do some logging here
             if (hasSuccessor()) { 
                 //TODO: Do some logging here
