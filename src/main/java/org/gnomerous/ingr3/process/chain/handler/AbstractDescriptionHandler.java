@@ -12,14 +12,14 @@ public abstract class AbstractDescriptionHandler extends AbstractIngredientHandl
         String description = lookupDescription(ingredient);
 
         // Validate the description
-        if (description == null || description == Ingredient.DEFAULT_NUTRITION_DESCRIPTION) { 
-            //TODO: Do some logging here
-            if (hasSuccessor()) { 
-                //TODO: Do some logging here
+        if (description == null || description == Ingredient.DEFAULT_NUTRITION_DESCRIPTION) {
+            // TODO: Do some logging here
+            if (hasSuccessor()) {
+                // TODO: Do some logging here
                 getSuccessor().process(ingredient);
             }
 
-        } else { 
+        } else {
             ingredient.setDescription(description);
         }
     }

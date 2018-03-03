@@ -17,16 +17,16 @@ public abstract class AbstractIngredientHandler implements Configurable {
 
     public abstract void process(Ingredient ingredient);
 
-    protected boolean hasSuccessor() { 
+    protected boolean hasSuccessor() {
         return hasSuccessor;
     }
 
-    protected AbstractIngredientHandler getSuccessor() { 
+    protected AbstractIngredientHandler getSuccessor() {
         return successor;
     }
 
     @Override
     public void configure(ConfigLoader loader) {
-        // TODO Override 
+        // TODO Override
     }
 }

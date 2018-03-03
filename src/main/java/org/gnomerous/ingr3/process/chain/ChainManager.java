@@ -13,22 +13,22 @@ import org.gnomerous.ingr3.process.chain.handler.AbstractIngredientHandler;
 public class ChainManager implements Configurable {
 
     private List<AbstractIngredientHandler> chain = new ArrayList<>();
-    
-    public void appendToChain(AbstractIngredientHandler ih) { 
+
+    public void appendToChain(AbstractIngredientHandler ih) {
         this.chain.add(ih);
     }
 
-    public void clearChain() { 
+    public void clearChain() {
         chain.clear();
     }
 
-    public boolean runChainOnIngredient(Ingredient ingredient) { 
+    public boolean runChainOnIngredient(Ingredient ingredient) {
         chain.forEach(ih -> ih.process(ingredient));
         return true;
     }
 
     @Override
     public void configure(ConfigLoader loader) {
-        //TODO: Nothing to do here yet.
+        // TODO: Nothing to do here yet.
     }
 }

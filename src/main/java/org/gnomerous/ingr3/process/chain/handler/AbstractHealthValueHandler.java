@@ -11,14 +11,14 @@ public abstract class AbstractHealthValueHandler extends AbstractIngredientHandl
         double healthValue = lookupHealthValue(ingredient);
 
         // Validate healthValue
-        if (healthValue == Ingredient.DEFAULT_RANKING) { 
+        if (healthValue == Ingredient.DEFAULT_RANKING) {
             // TODO: Do some logging here
-            if (hasSuccessor()) { 
-                //TODO: Do some logging here
+            if (hasSuccessor()) {
+                // TODO: Do some logging here
                 getSuccessor().process(ingredient);
             }
 
-        } else { 
+        } else {
             ingredient.setRanking(healthValue);
         }
     }

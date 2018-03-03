@@ -11,9 +11,7 @@ import org.gnomerous.ingr3.model.Ingredient;
 // JAVA
 import java.io.IOException;
 
-
 public class NLPForHealthValue extends AbstractHealthValueHandler {
-
 
     @Override
     protected double lookupHealthValue(Ingredient ingredient) {
@@ -22,28 +20,27 @@ public class NLPForHealthValue extends AbstractHealthValueHandler {
         try (LanguageServiceClient language = LanguageServiceClient.create()) {
 
             // Create a document that contains the description
-            Document doc = Document.newBuilder()
-                                        .setContent(ingredient.getIngredientDescription())
-                                        .setType(Type.PLAIN_TEXT)
-                                        .build();
+            Document doc = Document.newBuilder().setContent(ingredient.getIngredientDescription())
+                    .setType(Type.PLAIN_TEXT).build();
 
             // Return the sentiment value after doing some NLP analysis
             return language.analyzeSentiment(doc).getDocumentSentiment().getScore();
 
-        // Catch an IO Exception.
+            // Catch an IO Exception.
         } catch (IOException e) {
-            //TODO: do some logging here
+            // TODO: do some logging here
             System.out.println("IOexception caught while getting sentiment from description");
             e.printStackTrace();
 
-        // Catch any other Exceptions here.
+            // Catch any other Exceptions here.
         } catch (Exception e) {
-            //TODO: do some logging here
+            // TODO: do some logging here
             System.out.println("exception caught while getting sentiment from description");
             e.printStackTrace();
         }
 
-        // Return the DEFAULT_RANKING if we were unable to find a sentiment value.
+        // Return the DEFAULT_RANKING if we were unable to find a sentiment
+        // value.
         return Ingredient.DEFAULT_RANKING;
     }
 }
