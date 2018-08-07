@@ -1,18 +1,31 @@
 package org.gnomerous.ingr3.process.chain.handler;
 
-//GOOGLE
+// GOOGLE
 import com.google.cloud.language.v1.Document;
 import com.google.cloud.language.v1.Document.Type;
 import com.google.cloud.language.v1.LanguageServiceClient;
 
-//INGR3
+// GNOMEROUS
 import org.gnomerous.ingr3.model.Ingredient;
 
 // JAVA
 import java.io.IOException;
 
+/**
+ * An {@link AbstractHealthValueHander} designed to used Natural Language Processing
+ * to generate a health value based off of the description.
+ * 
+ * @author Marshal J. Dickey
+ *
+ */
 public class NLPForHealthValue extends AbstractHealthValueHandler {
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see org.gnomerous.ingr3.process.chain.handler.AbstractHealthValueHandler#lookupHealthValue(
+     * org.gnomerous.ingr3.model.Ingredient)
+     */
     @Override
     protected double lookupHealthValue(Ingredient ingredient) {
 

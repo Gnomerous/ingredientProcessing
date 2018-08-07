@@ -16,9 +16,16 @@ import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
-// INGR3
+// GNOMEROUS
 import org.gnomerous.ingr3.model.Ingredient;
 
+/**
+ * An {@link AbstractDescriptionHandler} designed to query Wikipedia to get a
+ * description for an ingredient.
+ * 
+ * @author Marshal J. Dickey
+ *
+ */
 public class QueryWikipediaForDescription extends AbstractDescriptionHandler {
 
     // CONSTANTS
@@ -46,6 +53,12 @@ public class QueryWikipediaForDescription extends AbstractDescriptionHandler {
 
     // OVERRIDES
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see org.gnomerous.ingr3.process.chain.handler.AbstractDescriptionHandler#lookupDescription(
+     * org.gnomerous.ingr3.model.Ingredient)
+     */
     @Override
     protected String lookupDescription(Ingredient ingredient) {
         try {
